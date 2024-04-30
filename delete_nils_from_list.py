@@ -10,14 +10,13 @@ def delete_nils(list_: list[int]):
     pivot = 0
     i = 0
     while i < len(list_):
-        if list_[i] == 0:
-            list_.pop(i)
-            list_.insert(pivot, 0)
+        if list_[i] != 0:
+            list_[pivot] = list_[i]
             pivot += 1
 
         i += 1
 
-    return list_[pivot:]
+    return list_[:pivot]
 
 
 if __name__ == "__main__":
